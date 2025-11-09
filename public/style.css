@@ -1,0 +1,11 @@
+.gambar-konten {
+    /* Batas lebar maksimal gambar di layar besar */
+    max-width: 800px;
+
+    /* Penting untuk responsivitas */
+    height: auto;
+
+    /* Untuk menengahkan gambar */
+    display: block;
+    margin: 0 auto;
+}

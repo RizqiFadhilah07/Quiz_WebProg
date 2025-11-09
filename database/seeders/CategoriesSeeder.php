@@ -16,6 +16,7 @@ class CategoriesSeeder extends Seeder
         DB::table('categories')->insert([
             ['name' => 'Interactive Multimedia'],
             ['name' => 'Software Engineering'],
+            ['name' => 'Computer Science'],
         ]);
     }
 }

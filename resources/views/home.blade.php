@@ -1,6 +1,15 @@
 @extends('layouts.master')
+@section('title', 'Home Page')
+
 
 @section('content')
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <img src="{{ asset("image/group-study.jpg") }}" alt="" width="1000px">
+        </div>
+    </div>
+</div>
 <div class="container">
   @foreach($articles as $a)
   <div class="card mb-4 shadow-sm border-0">

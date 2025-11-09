@@ -14,8 +14,8 @@ class WriterSeeder extends Seeder
     public function run(): void
     {
         DB::table('writers')->insert([
-            ['name' => 'Doni Rizqi', 'bio' => 'Expert in Interactive Design'],
-            ['name' => 'Andi Pratama', 'bio' => 'Software Engineer & Agile Practitioner'],
+            ['writers_id'=>1,'name' => 'Doni Rizqi', 'bio' => 'Expert in Interactive Design'],
+            ['writers_id'=>2,'name' => 'Andi Pratama', 'bio' => 'Software Engineer & Agile Practitioner'],
         ]);
     }
 }

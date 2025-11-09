@@ -1,8 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<h1 class="text-center mb-4">Latest Articles</h1>
-
 <div class="container">
   @foreach($articles as $a)
   <div class="card mb-4 shadow-sm border-0">

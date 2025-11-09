@@ -6,16 +6,16 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class WriterSeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('writers')->insert([
-            ['name' => 'Doni Rizqi', 'bio' => 'Expert in Interactive Design'],
-            ['name' => 'Andi Pratama', 'bio' => 'Software Engineer & Agile Practitioner'],
+        DB::table('categories')->insert([
+            ['name' => 'Interactive Multimedia'],
+            ['name' => 'Software Engineering'],
         ]);
     }
 }

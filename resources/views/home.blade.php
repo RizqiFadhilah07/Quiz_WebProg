@@ -3,12 +3,9 @@
 
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <img src="{{ asset("image/group-study.jpg") }}" alt="" width="1000px">
-        </div>
-    </div>
+<div class="container-fluid p-0 m-0" style="max-width: 100%; overflow: hidden;">
+    <img src="{{ asset('image/group-study.jpg') }}" alt="Banner" class="w-100 d-block" style="max-height: 400px; object-fit: cover; margin: 0; padding: 0;">
+</div>
 </div>
 <div class="container">
   @foreach($articles as $a)

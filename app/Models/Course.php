@@ -27,4 +27,8 @@ class Course extends Model
     {
         return $this->belongsTo(Writer::class);
     }
+
+      protected $casts = [
+        'published_at' => 'datetime',
+    ];
 }

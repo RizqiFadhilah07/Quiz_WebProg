@@ -6,6 +6,8 @@ use App\Models\Writer;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use function Symfony\Component\Clock\now;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Course>
  */
@@ -22,7 +24,8 @@ class CourseFactory extends Factory
             'title' => fake()->sentence(),
             'writer_id'=> Writer::factory(),
             'category_id' => Category::factory(),
-            'content' => fake()->text()
+            'content' => fake()->text(),
+            'published_at'=>now()
         ];
     }
 }

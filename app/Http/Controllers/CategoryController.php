@@ -1,16 +1,25 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Category;
 use App\Models\Course;
+use Illuminate\Http\Request;
 
-class CategoryController extends Controller {
-    public function index() {
+class CategoryController extends Controller
+{
+    public function index()
+    {
         $categories = Category::all();
-        return view('category', compact('categories'));
+        return view('category.index', compact('categories'));
     }
 
-    public function show($id) {
-        $courses = Course::where('category_id', $id)->get();
-        return view('detail', compact('courses'));
+    public function show($id)
+    {
+        $category = Category::findOrFail($id);
+        $courses = $category->courses; // gunakan relasi langsung
+
+        return view('category', compact('category', 'courses'));
     }
 }
+

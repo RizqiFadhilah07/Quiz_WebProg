@@ -12,7 +12,7 @@
   <div class="card mb-4 shadow-sm border-0 ">
     <div class="row g-0 align-items-center">
       <!-- Gambar Artikel -->
-      <div class="col-md-4">
+      <div class="col-md-4 pt-4">
         <img src="{{ asset('image/machine-learning.jpg') }}" class="img-fluid rounded-floated-start card-img align-items-center" alt="{{ $course->title }}">
       </div>
 

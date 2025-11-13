@@ -14,6 +14,6 @@ class WriterSeeder extends Seeder
      */
     public function run(): void
     {
-        Writer::factory(5)->create();
+        Writer::factory(2)->create();
     }
 }

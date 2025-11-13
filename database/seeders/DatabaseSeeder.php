@@ -25,11 +25,12 @@ class DatabaseSeeder extends Seeder
         // $this->call([CourseSeeder::class,]);
         // $this->call([CategoriesSeeder::class,]);
 
-         $this->call(CategoriesSeeder::class,WriterSeeder::class);
+         $this->call([CategoriesSeeder::class,WriterSeeder::class, CourseSeeder::class]);
 
-        Course::factory(100)->recycle([
-            Category::all(),
-            Writer::all()
+        Course::factory()->recycle([
+            // Category::all(),
+            // Writer::all(),
+            // Course::all()
         ])->create();
     }
     }

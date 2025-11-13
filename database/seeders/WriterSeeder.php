@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Writer;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class WriterSeeder extends Seeder
 {
@@ -13,9 +14,6 @@ class WriterSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('writers')->insert([
-            ['writers_id'=>1,'name' => 'Doni Rizqi', 'bio' => 'Expert in Interactive Design'],
-            ['writers_id'=>2,'name' => 'Andi Pratama', 'bio' => 'Software Engineer & Agile Practitioner'],
-        ]);
+        Writer::factory(5)->create();
     }
 }

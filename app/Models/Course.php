@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Course extends Model
 {
@@ -11,19 +12,18 @@ class Course extends Model
 
     protected $fillable = [
         'title',
+        'writer',
+        'category',
         'content',
-        'category_id',
-        'writer_id',
-        'published_at'
     ];
 
-    public function category()
+    public function category():BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
     // Relasi ke Writer
-    public function writer()
+    public function writer():BelongsTo
     {
         return $this->belongsTo(Writer::class);
     }

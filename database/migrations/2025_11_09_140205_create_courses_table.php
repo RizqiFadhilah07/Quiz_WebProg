@@ -14,12 +14,15 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
-            $table->integer('category_id');
-            $table->foreign('category_id')
-                ->references('category_id')->on('categories')
-                ->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('writer_id')->constrained();
+            $table->foreignId('writer_id')->constrained(
+                table:'writers',
+                indexName:'course_writer_id'
+            );
+            $table->foreignId('category_id')->constrained(
+                table:'categories',
+                indexName:'course_category_id'
+            );
+             $table->text('content');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

@@ -25,7 +25,14 @@ class CourseFactory extends Factory
             'writer_id'=> Writer::factory(),
             'category_id' => Category::factory(),
             'content' => fake()->text(),
-            'published_at'=>now()
+            'published_at'=>now(),
+            'courseImage' => fake()->randomElement([
+            'hci.jpg',
+            'software_engineering.jpg',
+            'agile.jpg',
+            'user_experience.jpg',
+            ]),
+
         ];
     }
 }

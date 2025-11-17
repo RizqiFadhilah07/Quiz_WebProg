@@ -2,15 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\WriterController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\WriterController;
+use App\Http\Controllers\CategoryController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'showHome'])->name('home');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category.show');
 
-Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+// Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+Route::get('/detail/{id}', [CourseController::class,'show'])->name('course.detail');
 
 Route::get('/writer', [WriterController::class, 'index'])->name('writer');
 

@@ -7,9 +7,13 @@ use App\Models\Course;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function showHome()
     {
-        $courses = Course::latest()->take(3)->get();
+        $courses = Course::with('writer')
+        ->orderBy('published_at', 'desc')
+        ->take(2)
+        ->get();
+
         return view('home', compact('courses'));
     }
 }

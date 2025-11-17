@@ -8,18 +8,16 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
-    {
-        $categories = Category::all();
-        return view('category.index', compact('categories'));
-    }
+   public function index($id)
+{
+    $category = Category::findOrFail($id);
 
-    public function show($id)
-    {
-        $category = Category::findOrFail($id);
-        $courses = $category->courses; // gunakan relasi langsung
+    $courses = Course::where('category_id', $id)
+        ->with(['writer', 'category'])
+        ->get();
 
-        return view('category', compact('category', 'courses'));
-    }
+    return view('category', compact('courses', 'category'));
+}
+
 }
 

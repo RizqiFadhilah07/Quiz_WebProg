@@ -23,6 +23,7 @@ return new class extends Migration
                 indexName:'course_category_id'
             );
              $table->text('content');
+             $table->text('courseImage');
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

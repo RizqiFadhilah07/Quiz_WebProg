@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->text('bio')->nullable();
+            $table->text('writerImage');
+            $table->enum('specialization', ['UI/UX', 'Software Engineering', 'Multimedia']);
             $table->timestamps();
         });
 

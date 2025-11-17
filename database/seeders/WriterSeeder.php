@@ -14,6 +14,26 @@ class WriterSeeder extends Seeder
      */
     public function run(): void
     {
-        Writer::factory(2)->create();
+        Writer::insert([
+            'name' => 'Kicul Mania',
+            'username' => fake()->unique()->userName(),
+            'email' => fake()->unique()->safeEmail(),
+            'writerImage' => 'writer1.jpg',
+            'specialization' => 'UI/UX'
+        ]);
+        Writer::insert([
+            'name' => 'Dewi Sartika',
+            'writerImage' => 'writer2.jpg',
+            'username' => fake()->unique()->userName(),
+            'email' => fake()->unique()->safeEmail(),
+            'specialization' => 'Software Engineering'
+        ]);
+        Writer::insert([
+            'name' => 'Sofia the First',
+            'writerImage' => 'writer3.jpg',
+            'username' => fake()->unique()->userName(),
+            'email' => fake()->unique()->safeEmail(),
+            'specialization' => 'Multimedia'
+        ]);
     }
 }

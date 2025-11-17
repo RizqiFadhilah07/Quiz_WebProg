@@ -20,7 +20,17 @@ class WriterFactory extends Factory
             'name' => fake()->name(),
             'username'=> fake()->unique()->userName(),
             'email' => fake()->unique()->safeEmail(),
-            'bio' => fake()->sentence(3)
+            'bio' => fake()->sentence(3),
+            'writerImage' => fake()->randomElement([
+            'writer1.jpg',
+            'writer2.jpg',
+            'writer3.jpg',
+            ]),
+            'specialization' => fake()->randomElement([
+            'UI/UX',
+            'Software Engineering',
+            'Multimedia',
+        ]),
         ];
     }
 }

@@ -14,10 +14,10 @@ class CategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        Category::create([
+        Category::insert([
             'name' => 'Interactive Multimedia'
         ]);
-        Category::create([
+        Category::insert([
             'name' => 'Software Engineering'
         ]);
     }

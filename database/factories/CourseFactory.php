@@ -22,7 +22,7 @@ class CourseFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'writer_id'=> Writer::factory(),
+            'writer_id'=> Writer::inRandomOrder()->first()->id,
             'category_id' => 1,
             'content' => fake()->text(),
             'published_at'=>now(),
